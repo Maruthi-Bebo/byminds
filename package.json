@@ -1,0 +1,36 @@
+{
+  "name": "next-sanity-page-router-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typegen": "sanity schema extract --enforce-required-fields --path=src/sanity/schema.json && sanity typegen generate"
+  },
+  "dependencies": {
+    "@sanity/client": "^7.1.0",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/react-loader": "^1.11.8",
+    "@sanity/vision": "^3.88.0",
+    "@sanity/visual-editing": "^2.13.20",
+    "next": "15.3.2",
+    "next-sanity": "^9.10.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sanity": "^3.88.0",
+    "styled-components": "^6.1.17"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
