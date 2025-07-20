@@ -1,6 +1,6 @@
 import { TCustomMedia } from "@/app.types"
 import Media from "./Media";
-import { useState, useLayoutEffect, useRef, useEffect } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 

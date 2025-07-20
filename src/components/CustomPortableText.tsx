@@ -35,7 +35,7 @@ export default function CustomPortableText({
       ),
       customVideo: ({ value }) => <CustomVideo {...value} />,
       media: ({ value, index }) => <Media {...value} isLCP={index === 0} />,
-      logoBanner: ({ value, index }) => <LogoBanner {...value} />,
+      logoBanner: ({ value }) => <LogoBanner {...value} />,
     },
   };
 
