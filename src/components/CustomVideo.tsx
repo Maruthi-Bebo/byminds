@@ -65,6 +65,9 @@ export default function CustomVideo(props: CustomVideoProps) {
     width = "100%",
     height = "auto",
     className,
+    containerClassName,
+    defaultMediaLoading,
+    mobileMediaLoading,
   } = props;
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -85,7 +88,7 @@ export default function CustomVideo(props: CustomVideoProps) {
           width: width === "auto" ? "fit-content" : width,
           height: height === "auto" ? "fit-content" : height,
         }}
-        className={`relative hidden md:block`}
+        className={`relative hidden md:block ${containerClassName}`}
       >
         <video
           style={{
@@ -101,7 +104,7 @@ export default function CustomVideo(props: CustomVideoProps) {
           ref={videoRef}
           playsInline
           controls={false}
-          onCanPlay={() => setVideoLoading(false)}
+          onCanPlay={() => {setVideoLoading(false); defaultMediaLoading?.(false)}}
         >
           <source src={desktopVideo.videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
@@ -115,7 +118,7 @@ export default function CustomVideo(props: CustomVideoProps) {
           width: width === "auto" ? "fit-content" : width,
           height: height === "auto" ? "fit-content" : height,
         }}
-        className={`relative md:hidden`}
+        className={`relative md:hidden ${containerClassName}`}
       >
         <video
           style={{
@@ -138,7 +141,7 @@ export default function CustomVideo(props: CustomVideoProps) {
           ref={videoRefMobile}
           playsInline
           controls={false}
-          onCanPlay={() => setMobileVideoLoading(false)}
+          onCanPlay={() => {setMobileVideoLoading(false); mobileMediaLoading?.(false)}}
         >
           <source src={mobileVideo?.videoUrl} type="video/mp4" />
           Your browser does not support the video tag.

@@ -10,6 +10,9 @@ type Props = {
   className?: string;
   width?: string | number;
   height?: string | number;
+  containerClassName?: string;
+  defaultMediaLoading?: (loading: boolean) => void;
+  mobileMediaLoading?: (loading: boolean) => void;
 };
 
 export default function Media(props: Props) {
@@ -22,6 +25,8 @@ export default function Media(props: Props) {
           className={props.className}
           width={props.width}
           height={props.height}
+          // defaultMediaLoading={props.defaultMediaLoading}
+          // mobileMediaLoading={props.mobileMediaLoading}
         />
       )}
       {props.mediaType === "video" && props.video && (
@@ -30,6 +35,8 @@ export default function Media(props: Props) {
           className={props.className}
           width={props.width}
           height={props.height}
+          defaultMediaLoading={props.defaultMediaLoading}
+          mobileMediaLoading={props.mobileMediaLoading}
         />
       )}
     </>

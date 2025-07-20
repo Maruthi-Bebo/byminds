@@ -56,6 +56,9 @@ export type CustomVideoProps = {
     width?: number | string;
     height?: number | string;
     className?: string;
+    containerClassName?: string
+    defaultMediaLoading?: (loading: boolean) => void;
+    mobileMediaLoading?: (loading: boolean) => void;
 };
 
 export interface TCustomMedia {

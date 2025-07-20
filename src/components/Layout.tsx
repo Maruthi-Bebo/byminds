@@ -3,7 +3,7 @@ import NavBar from "./Navbar";
 
 import { FooterQueryResult, NavigationQueryResult } from "@/sanity/types";
 import { ReactNode } from "react";
-import { montserrat } from "@/fonts/loadFonts";
+import { generalSans, satoshi } from "@/fonts/loadFonts";
 
 interface LayoutProps {
   navData: NavigationQueryResult;
@@ -13,7 +13,7 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   return (
-    <div className={`${montserrat.variable}`}>
+    <div className={`${generalSans.variable} ${satoshi.variable}`}>
       {props.navData && <NavBar {...props.navData} />}
       <main>{props.children}</main>
       {props.footerData && <Footer {...props.footerData} />}
