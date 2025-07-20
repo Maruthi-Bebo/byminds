@@ -57,6 +57,7 @@ export default function LogoBanner(props: LogoBannerProps) {
                     scrub: true,
                     pin: true,
                     pinSpacing: true,
+                    snap: 1
                 },
             });
         
@@ -78,11 +79,11 @@ export default function LogoBanner(props: LogoBannerProps) {
                 scrollTrigger: {
                     trigger: ".logoBanner",
                     start: 'top top',
-                    end: '+=300px',
+                    end: '+=400px',
                     scrub: 0.1,
                     pin: true,
                     pinSpacing: true,
-                    toggleActions: "play none none reverse"
+                    snap: 1
                 },
             });
         
@@ -101,7 +102,7 @@ export default function LogoBanner(props: LogoBannerProps) {
     }, []);
 
     return (
-      <div className={`logoBanner w-full h-[100vh] ${!defaultMediaLoading || !mobileMediaLoading?"showLogo":""}`}>
+      <div className={`logoBanner w-full h-[100vh] max-md:h-[80vh] ${!defaultMediaLoading || !mobileMediaLoading?"showLogo":""}`}>
         <Media {...props.media} className="object-cover" height={"100%"} width={"100%"} defaultMediaLoading={desktopMediaDownloaded} mobileMediaLoading={mobileMediaDownloaded}/>
         <div ref={logoRef} className="w-[calc(100%-8rem)] max-md:w-[calc(100%-2rem)] fixed bottom-0 translate-x-[-50%] left-[50%] logoContainer">
           <div className="captionContainer absolute top-[18%] left-[7.5%] max-xl:top-[15%] max-tab:top-[10%] max-tab:left-[7%] max-md:left-[6%] max-md:top-[-8px] overflow-hidden">
