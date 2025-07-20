@@ -101,7 +101,7 @@ export default function CustomVideo(props: CustomVideoProps) {
           ref={videoRef}
           playsInline
           controls={false}
-          onCanPlayThrough={() => setVideoLoading(false)}
+          onCanPlay={() => setVideoLoading(false)}
         >
           <source src={desktopVideo.videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
@@ -138,7 +138,7 @@ export default function CustomVideo(props: CustomVideoProps) {
           ref={videoRefMobile}
           playsInline
           controls={false}
-          onCanPlayThrough={() => setMobileVideoLoading(false)}
+          onCanPlay={() => setMobileVideoLoading(false)}
         >
           <source src={mobileVideo?.videoUrl} type="video/mp4" />
           Your browser does not support the video tag.

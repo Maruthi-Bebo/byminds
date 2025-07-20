@@ -9,6 +9,7 @@ export default defineType({
     { type: "customImage" },
     { type: "customVideo" },
     { type: "media" },
-    { type: "titleAndDescription" }
+    { type: "titleAndDescription" },
+    { type: "logoBanner" },
   ]
 });

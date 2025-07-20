@@ -11,6 +11,7 @@ import footer from "./singletons/footer";
 import navigation from "./singletons/navigation";
 import settings from "./singletons/settings";
 import titleAndDescription from "./common/titleAndDescription";
+import LogoBanner from "./sections/logoBanner";
 
 const schema = {
   types: [
@@ -31,7 +32,10 @@ const schema = {
     link,
     richText,
     customCta,
-    titleAndDescription
+    titleAndDescription,
+
+    // sections
+    LogoBanner
   ]
 }
 

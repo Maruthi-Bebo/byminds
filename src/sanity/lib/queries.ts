@@ -99,6 +99,14 @@ const titleAndDescriptionFields = `
   }
 `;
 
+const logoBannerFields = `
+  media{
+    ...,
+    ${customMediaFields}
+  },
+  caption
+`
+
 const pageFields = `
   _id,
   "status": select(_originalId in path("drafts.**") => "draft", "published"),
@@ -123,6 +131,10 @@ const pageFields = `
     _type == 'titleAndDescription' => {
      ...,
      ${titleAndDescriptionFields}
+    },
+    _type == 'logoBanner' => {
+     ...,
+     ${logoBannerFields}
     },
   },
   metaData{
