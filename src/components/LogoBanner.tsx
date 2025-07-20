@@ -53,8 +53,8 @@ export default function LogoBanner(props: LogoBannerProps) {
                 scrollTrigger: {
                     trigger: ".logoBanner",
                     start: 'top top',
-                    end: '+=1000px',
-                    scrub: 0.1,
+                    end: '+=400px',
+                    scrub: true,
                     pin: true,
                     pinSpacing: true,
                 },
@@ -64,13 +64,12 @@ export default function LogoBanner(props: LogoBannerProps) {
             .to(".captionContainer", {
                 translateY: '-30px',
                 opacity: 0,
-                duration: 1,
             })
             .to(".logoContainer", {
                 width: '217px',
+                // scale: 0.15,
                 top: "1%",
                 bottom: 'auto',
-                duration: 2,
             })
         })
 
@@ -79,10 +78,11 @@ export default function LogoBanner(props: LogoBannerProps) {
                 scrollTrigger: {
                     trigger: ".logoBanner",
                     start: 'top top',
-                    end: '+=1000px',
+                    end: '+=300px',
                     scrub: 0.1,
                     pin: true,
                     pinSpacing: true,
+                    toggleActions: "play none none reverse"
                 },
             });
         
@@ -90,20 +90,18 @@ export default function LogoBanner(props: LogoBannerProps) {
             .to(".captionContainer", {
                 translateY: '-30px',
                 opacity: 0,
-                duration: 1,
             })
             .to(".logoContainer", {
                 width: '100px',
                 top: "1%",
                 bottom: 'auto',
-                duration: 2,
             })
         })
         
     }, []);
 
     return (
-      <div className={`logoBanner w-full h-[100dvh] ${!defaultMediaLoading || !mobileMediaLoading?"showLogo":""}`}>
+      <div className={`logoBanner w-full h-[100vh] ${!defaultMediaLoading || !mobileMediaLoading?"showLogo":""}`}>
         <Media {...props.media} className="object-cover" height={"100%"} width={"100%"} defaultMediaLoading={desktopMediaDownloaded} mobileMediaLoading={mobileMediaDownloaded}/>
         <div ref={logoRef} className="w-[calc(100%-8rem)] max-md:w-[calc(100%-2rem)] fixed bottom-0 translate-x-[-50%] left-[50%] logoContainer">
           <div className="captionContainer absolute top-[18%] left-[7.5%] max-xl:top-[15%] max-tab:top-[10%] max-tab:left-[7%] max-md:left-[6%] max-md:top-[-8px] overflow-hidden">
