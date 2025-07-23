@@ -83,7 +83,24 @@ export default function CustomVideo(props: CustomVideoProps) {
 
   return (
     <>
-      <div
+      <div>
+        <video
+          width={desktopVideo.videoDimensions?.width}
+          height={desktopVideo.videoDimensions?.height}
+          className={`${className ?? ""}`}
+          autoPlay={true}
+          muted={true}
+          loop
+          ref={videoRef}
+          playsInline
+          controls={false}
+          onCanPlay={() => {setVideoLoading(false); defaultMediaLoading?.(false)}}
+        >
+          <source src={desktopVideo.videoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {/* <div
         style={{
           width: width === "auto" ? "fit-content" : width,
           height: height === "auto" ? "fit-content" : height,
@@ -148,7 +165,7 @@ export default function CustomVideo(props: CustomVideoProps) {
         </video>
         {showMuteIcon && <MuteButton videoRef={videoRefMobile} />}
         {mobileVideoLoading && <Loader />}
-      </div>
+      </div> */}
     </>
   );
 }

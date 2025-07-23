@@ -2,7 +2,7 @@
 
 :root {
   --background: #FFFFFF;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 /* Customize your tailwind theme variables  */
@@ -46,7 +46,7 @@ body {
 .logoBanner .logoContainer{
   opacity: 0;
 }
-.logoBanner.showLogo .logoContainer{
+.logoBanner .logoContainer{
   opacity: 1;
   transition: all 0.5s ease-out;
 }
