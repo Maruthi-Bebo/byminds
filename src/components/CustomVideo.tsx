@@ -67,7 +67,7 @@ export default function CustomVideo(props: CustomVideoProps) {
     className,
     // containerClassName,
     // mobileMediaLoading,
-    defaultMediaLoading,
+    // defaultMediaLoading,
   } = props;
 
   const videoRef = useRef<HTMLVideoElement>(null);
