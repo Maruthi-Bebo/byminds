@@ -1,6 +1,6 @@
 import { TCustomMedia } from "@/app.types"
 import Media from "./Media";
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import LogoSvg from "./LogoSvg";
@@ -15,7 +15,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function LogoBanner(props: LogoBannerProps) {
     const [defaultMediaLoading, setDefaultMediaLoading] = useState(true);
     const [mobileMediaLoading, setMobileMediaLoading] = useState(true);
-    const logoRef = useRef(null)
     
     const desktopMediaDownloaded = () =>{
       setTimeout(() => {
