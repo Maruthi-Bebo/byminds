@@ -74,7 +74,7 @@ body {
 .logoSvgContainer.animate svg path{
   fill: transparent;
   stroke: #FFFFFF;
-  stroke-width: 0.1;
+  stroke-width: 0.2;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: mainBannerLogoAnime 5s ease-in-out 1 forwards;
