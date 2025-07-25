@@ -3,6 +3,7 @@ import Media from "./Media";
 import { useState, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import LogoSvg from "./LogoSvg";
 
 interface LogoBannerProps{
     media: TCustomMedia;
@@ -45,73 +46,71 @@ export default function LogoBanner(props: LogoBannerProps) {
     //   return () => ctx.revert()
     // }, [])
 
-    useLayoutEffect(() => {
-        const mm = gsap.matchMedia()
+    // useLayoutEffect(() => {
+    //     const mm = gsap.matchMedia()
 
-        mm.add("(min-width:768px)", () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".logoBanner",
-                    start: 'top top',
-                    end: '+=400px',
-                    scrub: true,
-                    pin: true,
-                    pinSpacing: true,
-                    snap: 1
-                },
-            });
+    //     mm.add("(min-width:768px)", () => {
+    //         const tl = gsap.timeline({
+    //             scrollTrigger: {
+    //                 trigger: ".logoBanner",
+    //                 start: 'top top',
+    //                 end: '+=400px',
+    //                 scrub: true,
+    //                 pin: true,
+    //                 pinSpacing: true,
+    //                 snap: 1
+    //             },
+    //         });
         
-            tl
-            .to(".captionContainer", {
-                translateY: '-30px',
-                opacity: 0,
-            })
-            .to(".logoContainer", {
-                width: '217px',
-                // scale: 0.15,
-                top: "1%",
-                // bottom: 'auto',
-            })
-        })
+    //         tl
+    //         .to(".captionContainer", {
+    //             translateY: '-30px',
+    //             opacity: 0,
+    //         })
+    //         .to(".logoContainer", {
+    //             width: '217px',
+    //             // scale: 0.15,
+    //             top: "1%",
+    //             // bottom: 'auto',
+    //         })
+    //     })
 
-        mm.add("(max-width:768px)", () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".logoBanner",
-                    start: 'top top',
-                    end: '+=400px',
-                    scrub: 0.1,
-                    pin: true,
-                    pinSpacing: true,
-                },
-            });
+    //     mm.add("(max-width:768px)", () => {
+    //         const tl = gsap.timeline({
+    //             scrollTrigger: {
+    //                 trigger: ".logoBanner",
+    //                 start: 'top top',
+    //                 end: '+=400px',
+    //                 scrub: 0.1,
+    //                 pin: true,
+    //                 pinSpacing: true,
+    //             },
+    //         });
         
-            tl
-            .to(".captionContainer", {
-                translateY: '-30px',
-                opacity: 0,
-            })
-            .to(".logoContainer", {
-                width: '100px',
-                top: "1%",
-                bottom: 'auto',
-            })
-        })
+    //         tl
+    //         .to(".captionContainer", {
+    //             translateY: '-30px',
+    //             opacity: 0,
+    //         })
+    //         .to(".logoContainer", {
+    //             width: '100px',
+    //             top: "1%",
+    //             bottom: 'auto',
+    //         })
+    //     })
         
-    }, []);
+    // }, []);
 
     return (
       <div className="">
         <div className={`logoBanner showLogo w-full h-[100vh] relative ${!defaultMediaLoading || !mobileMediaLoading?"showLogo":""}`}>
-          <div className="bg-foreground h-full w-full"></div>
-          <div ref={logoRef} className="w-[calc(100%-8rem)] max-md:w-[calc(100%-2rem)] fixed bottom-0 max-md:bottom-auto max-md:top-[50%] translate-x-[-50%] left-[50%] logoContainer">
-            <div className="captionContainer absolute top-[18%] left-[7.5%] max-xl:top-[15%] max-tab:top-[10%] max-tab:left-[7%] max-md:left-[6%] max-md:top-[-8px] overflow-hidden">
+          <div className="blackBanner bg-foreground h-full w-full absolute"></div>
+          <div className="logoSvgContainer animate fixed left-[50%] translate-x-[-50%]">
+            <LogoSvg/>
+            <div className="captionContainer absolute top-[10%] left-[7%] max-xl:top-[15%] max-tab:top-[10%] max-tab:left-[7%] max-md:left-[6%] max-md:top-[-8px] overflow-hidden">
               <p className="caption font-generalSans text-[2rem] max-xl:text-[1.6rem] max-tab:text-[1.4rem] uppercase text-background tracking-[1rem] max-xl2:tracking-[5px] max-tab:tracking-[3px] max-md:tracking-[4px]">{props.caption}</p>
             </div>
-            <img src="/images/mainLogoBig.svg" width={1193} height={347} alt="Logo" className="w-full"/>
           </div>
-        </div>
-        <div>
           <Media {...props.media} className="object-cover w-full h-[100vh]" height={"100%"} width={"100%"} defaultMediaLoading={desktopMediaDownloaded} mobileMediaLoading={mobileMediaDownloaded}/>
         </div>
       </div>
