@@ -131,6 +131,7 @@ const ourWorkListingFields = `
     ${richTextFields}
   },
   caseStudies[]{
+    ...,
     images[]{
       image{
         ...,

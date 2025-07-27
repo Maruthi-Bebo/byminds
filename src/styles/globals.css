@@ -34,6 +34,11 @@
   }
 }
 
+@utility text-box-trim {
+  text-box-edge: cap alphabetic;
+  text-box-trim: trim-both;
+}
+
 html {
   font-size: 10px; 
   letter-spacing: 0px;
@@ -80,7 +85,13 @@ body {
 }
 
 
-
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 .logoBanner .caption{
   transform: translateY(50px);
