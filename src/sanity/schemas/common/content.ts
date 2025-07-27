@@ -11,5 +11,7 @@ export default defineType({
     { type: "media" },
     { type: "titleAndDescription" },
     { type: "logoBanner" },
+    { type: "portraitBanner" },
+    { type: "ourWorkListing" },
   ]
 });

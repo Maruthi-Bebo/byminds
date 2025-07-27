@@ -106,6 +106,43 @@ const logoBannerFields = `
   },
   caption
 `
+const portraitBannerFields = `
+  ...,
+  media{
+    ...,
+    ${customMediaFields}
+  },
+  title[]{
+    ...,
+    ${richTextFields}
+  },
+  headingAndDesc[]{
+    heading,
+    desc[]{
+      ...,
+      ${richTextFields}
+    }
+  }
+`
+const ourWorkListingFields = `
+  ...,
+  title[]{
+    ...,
+    ${richTextFields}
+  },
+  caseStudies[]{
+    images[]{
+      image{
+        ...,
+        ${customMediaFields}
+      }
+    },
+    link{
+      ...,
+      ${linkFields}
+    }
+  }
+`
 
 const pageFields = `
   _id,
@@ -135,6 +172,14 @@ const pageFields = `
     _type == 'logoBanner' => {
      ...,
      ${logoBannerFields}
+    },
+    _type == 'portraitBanner' => {
+     ...,
+     ${portraitBannerFields}
+    },
+    _type == 'ourWorkListing' => {
+     ...,
+     ${ourWorkListingFields}
     },
   },
   metaData{

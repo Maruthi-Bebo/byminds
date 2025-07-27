@@ -12,6 +12,8 @@ import navigation from "./singletons/navigation";
 import settings from "./singletons/settings";
 import titleAndDescription from "./common/titleAndDescription";
 import LogoBanner from "./sections/logoBanner";
+import portraitBanner from "./sections/portraitBanner";
+import ourWorkListing from "./sections/ourWorkListing";
 
 const schema = {
   types: [
@@ -35,7 +37,9 @@ const schema = {
     titleAndDescription,
 
     // sections
-    LogoBanner
+    LogoBanner,
+    portraitBanner,
+    ourWorkListing
   ]
 }
 

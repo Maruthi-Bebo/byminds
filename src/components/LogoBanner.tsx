@@ -103,13 +103,13 @@ export default function LogoBanner(props: LogoBannerProps) {
     return (
       <div className="">
         <div className={`logoBanner showLogo w-full h-[100vh] relative ${!defaultMediaLoading || !mobileMediaLoading?"showLogo":""}`}>
-          <div className="blackBanner bg-foreground h-full w-full absolute"></div>
+          {/* <div className="blackBanner bg-foreground h-full w-full absolute"></div>
           <div className="logoSvgContainer animate fixed left-[50%] translate-x-[-50%]">
             <LogoSvg/>
             <div className="captionContainer absolute top-[10%] left-[7%] max-xl:top-[15%] max-tab:top-[10%] max-tab:left-[7%] max-md:left-[6%] max-md:top-[-8px] overflow-hidden">
               <p className="caption font-generalSans text-[2rem] max-xl:text-[1.6rem] max-tab:text-[1.4rem] uppercase text-background tracking-[1rem] max-xl2:tracking-[5px] max-tab:tracking-[3px] max-md:tracking-[4px]">{props.caption}</p>
             </div>
-          </div>
+          </div> */}
           <Media {...props.media} className="object-cover w-full h-[100vh]" height={"100%"} width={"100%"} defaultMediaLoading={desktopMediaDownloaded} mobileMediaLoading={mobileMediaDownloaded}/>
         </div>
       </div>

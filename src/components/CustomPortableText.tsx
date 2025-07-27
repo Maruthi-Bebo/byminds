@@ -18,6 +18,8 @@ import CustomImage from "./CustomImage";
 import CustomVideo from "./CustomVideo";
 import Media from "./Media";
 import LogoBanner from "./LogoBanner";
+import PortraitBanner from "./PortraitBanner";
+import OurWorkListing from "./OurWorkListing";
 
 
 export default function CustomPortableText({
@@ -36,6 +38,8 @@ export default function CustomPortableText({
       customVideo: ({ value }) => <CustomVideo {...value} />,
       media: ({ value, index }) => <Media {...value} isLCP={index === 0} />,
       logoBanner: ({ value }) => <LogoBanner {...value} />,
+      portraitBanner: ({ value }) => <PortraitBanner {...value} />,
+      ourWorkListing: ({ value }) => <OurWorkListing {...value} />,
     },
   };
 
