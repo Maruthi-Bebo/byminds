@@ -3,7 +3,7 @@ import Media from "./Media";
 import { useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import LogoSvg from "./LogoSvg";
+// import LogoSvg from "./LogoSvg";
 
 interface LogoBannerProps{
     media: TCustomMedia;

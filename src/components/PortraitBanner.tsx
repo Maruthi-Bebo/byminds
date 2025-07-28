@@ -29,8 +29,8 @@ export default function PortraitBanner(props: PortraitBannerProps) {
                 <CustomRichText value={props.title} className="text-[6.7rem] text-center font-generalSans font-[500] px-[11%] leading-[7rem] mb-[22.2rem]"/>
             </Animate>
             <ul className="flex flex-col items-center gap-[8rem]">
-                {props.headingAndDesc.map(item=>(
-                    <li className="text-center w-[63.5rem]">
+                {props.headingAndDesc.map((item, id)=>(
+                    <li key={`p-banner-text-${id}`} className="text-center w-[63.5rem]">
                         <Animate fromDown>
                             <p className="text-[3.4rem] font-satoshi font-[700] mb-[1.2rem] leading-[3.4rem]">{item.heading}</p>
                             <CustomRichText value={item.desc} className="text-[3.4rem] text-center font-satoshi font-[400] leading-[3.4rem] tracking-[-1px]"/>

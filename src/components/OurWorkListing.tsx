@@ -35,8 +35,8 @@ export default function OurWorkListing(props: OurWorkListingProps) {
                 {props.caption && <p className="font-generalSans text-[2.2rem]">{props.caption}</p>}
               </div>
               <div>
-                {props.caseStudies?.map(caseItem=>(
-                  <div>
+                {props.caseStudies?.map((caseItem, id)=>(
+                  <div key={`case-item-home-${id}`}>
                     <SingleCaseSlider caseItem={caseItem}/>
                   </div>
                 ))}
