@@ -4,6 +4,7 @@
   --background: #FFFFFF;
   --foreground: #000000;
   --greenLight: #66D575;
+  --greyText: #838383;
 }
 
 /* Customize your tailwind theme variables  */
@@ -12,6 +13,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-greenLight: var(--greenLight);
+  --color-greyText: var(--greyText);
 
   /* fonts */
   --font-generalSans: var(--font-generalSans), sans-serif;

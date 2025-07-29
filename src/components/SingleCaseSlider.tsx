@@ -204,10 +204,22 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
           ))}
         </ul>
       </div>
-      <div className="px-[5.4rem]">
+      <div className="px-[5.4rem] flex justify-between">
         <div className="">
           <p className="text-[4rem] font-[500] font-generalSans text-box-trim mb-[2rem]">{props.caseItem?.heading}</p>
           <p className="text-[2.2rem] font-[400] font-generalSans leading-[2.8rem] mb-[1rem]">{props.caseItem?.caption}</p>
+          <div>
+            {props.caseItem?.roles?.map(role=>(
+              <p className="text-[1.4rem] font-generalSans flex gap-[2rem]">
+                <span className="text-greyText">{role.roleName}</span>
+                <span className="text-foreground">{role.personName}</span>
+              </p>
+            ))}
+          </div>
+        </div>
+        <div className="w-[45.6rem]">
+            <p className="text-[2.2rem] font-satoshi font-[700] mb-[0.4rem]">{props.caseItem?.aboutLabel}</p>
+            <p className="text-[2.2rem] font-generalSans font-[400] tracking-[0.5px]">{props.caseItem?.aboutContent}</p>
         </div>
       </div>
     </div>
