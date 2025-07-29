@@ -15,12 +15,11 @@ interface PortraitBannerProps{
 }
 
 export default function PortraitBanner(props: PortraitBannerProps) {
-    console.log("PortraitBanner", props);
-    let bgImage;
-    if (props.media.mediaType === "image") {
-        bgImage = props.media.image?.desktopImage?.imageUrl;
-    }
-// style={{backgroundImage: `url(${bgImage})`}}
+    // let bgImage;
+    // if (props.media.mediaType === "image") {
+    //     bgImage = props.media.image?.desktopImage?.imageUrl;
+    // }
+    // style={{backgroundImage: `url(${bgImage})`}}
     return (
         <div className="portraitBanner relative pt-[28.5rem] pb-[22.6rem] text-background">
             <div className="absolute h-full w-full top-0 left-0">
