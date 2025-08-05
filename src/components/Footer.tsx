@@ -1,10 +1,9 @@
-import { WithoutNull } from "@/app.types";
-import { FooterQueryResult } from "@/sanity/types";
+// import { WithoutNull } from "@/app.types";
+// import { FooterQueryResult } from "@/sanity/types";
 
-type FooterProps = WithoutNull<FooterQueryResult>;
+// type FooterProps = WithoutNull<FooterQueryResult>;
 
-const Footer = (props: FooterProps) => {
-  console.log("Footer Data", props);
+const Footer = () => {
   return (
     <footer className="footer bg-foreground pt-[9.5rem] pb-[5.2rem] px-[4.6rem] text-background">
       <p className="w-[45rem] text-center mx-auto mb-[2.3rem] web-p1">Ready to move beyond the tactical and build a brand that truly endures?</p>
