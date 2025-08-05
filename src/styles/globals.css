@@ -36,6 +36,30 @@
   }
 }
 
+@utility bigTitle {
+  @apply text-[5rem] tracking-[-0.5px] font-generalSans font-[500] leading-[5.5rem];
+}
+
+@utility web-h1 {
+  @apply text-[3rem] tracking-[-0.5px] font-satoshi font-[700] leading-[3.4rem];
+}
+
+@utility web-p1 {
+  @apply text-[2.8rem] tracking-[-0.5px] font-generalSans leading-[3.4rem];
+}
+
+@utility web-p2 {
+  @apply text-[2rem] tracking-[-0.2px] font-generalSans leading-[2.6rem];
+}
+
+@utility web-h2 {
+  @apply text-[4rem] tracking-[-0.2px] font-generalSans font-[700] leading-[4.4rem];
+}
+
+@utility web-h3 {
+  @apply text-[2.2rem] tracking-[-0.2px] font-generalSans font-[700] leading-[2.8rem];
+}
+
 @utility text-box-trim {
   text-box-edge: cap alphabetic;
   text-box-trim: trim-both;

@@ -47,7 +47,7 @@ const Layout = (props: LayoutProps) => {
     <div ref={scrollRef} data-scroll-container id="app" className={`${generalSans.variable} ${satoshi.variable}`}>
       {props.navData && <NavBar {...props.navData} />}
       <main>{props.children}</main>
-      {props.footerData && <Footer {...props.footerData} />}
+      {true && <Footer {...props.footerData} />}
     </div>
   );
 };

@@ -14,6 +14,8 @@ import titleAndDescription from "./common/titleAndDescription";
 import LogoBanner from "./sections/logoBanner";
 import portraitBanner from "./sections/portraitBanner";
 import ourWorkListing from "./sections/ourWorkListing";
+import brandIcons from "./sections/brandIcons";
+import services from "./sections/services";
 
 const schema = {
   types: [
@@ -39,7 +41,9 @@ const schema = {
     // sections
     LogoBanner,
     portraitBanner,
-    ourWorkListing
+    ourWorkListing,
+    brandIcons,
+    services
   ]
 }
 

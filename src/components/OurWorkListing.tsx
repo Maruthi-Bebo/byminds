@@ -2,6 +2,7 @@ import { TCustomMedia, Tlink } from "@/app.types";
 import { PortableTextBlock } from "next-sanity";
 import CustomRichText from "./CustomRichText";
 import SingleCaseSlider from "./SingleCaseSlider";
+import Animate from "./Animate";
 
 interface OurWorkListingProps {
   title?: PortableTextBlock[];
@@ -31,8 +32,10 @@ export default function OurWorkListing(props: OurWorkListingProps) {
         <div className="ourWorkListing pt-[27rem]">
             <div className="relative">
               <div className="sticky top-0 pt-[1rem] pb-[1rem] text-center bg-background z-[1]">
-                {props.title && <CustomRichText value={props.title} className="font-satoshi font-[700] text-[4rem]"/>}
-                {props.caption && <p className="font-generalSans text-[2.2rem]">{props.caption}</p>}
+                <Animate fromDown>
+                  {props.title && <CustomRichText value={props.title} className="web-h2 mb-[1rem]"/>}
+                  {props.caption && <p className="web-p1">{props.caption}</p>}
+                </Animate>
               </div>
               <div>
                 {props.caseStudies?.map((caseItem, id)=>(

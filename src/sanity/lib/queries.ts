@@ -145,6 +145,41 @@ const ourWorkListingFields = `
   }
 `
 
+const brandIconsFields = `
+  title[]{
+    ...,
+    ${richTextFields}
+  },
+  description[]{
+    ...,
+    ${richTextFields}
+  },
+  icons[]{
+    ...,
+    icon{
+      "imageUrl": asset->url,
+    }
+  }
+`
+const servicesFields = `
+  ...,
+  media{
+    ...,
+    ${customMediaFields}
+  },
+  services[]{
+    ...,
+    desc1[]{
+      ...,
+      ${richTextFields}
+    },
+    desc2[]{
+      ...,
+      ${richTextFields}
+    }
+  }
+`
+
 const pageFields = `
   _id,
   "status": select(_originalId in path("drafts.**") => "draft", "published"),
@@ -181,6 +216,14 @@ const pageFields = `
     _type == 'ourWorkListing' => {
      ...,
      ${ourWorkListingFields}
+    },
+    _type == 'brandIcons' => {
+     ...,
+     ${brandIconsFields}
+    },
+    _type == 'services' => {
+     ...,
+     ${servicesFields}
     },
   },
   metaData{

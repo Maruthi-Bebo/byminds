@@ -13,5 +13,7 @@ export default defineType({
     { type: "logoBanner" },
     { type: "portraitBanner" },
     { type: "ourWorkListing" },
+    { type: "brandIcons" },
+    { type: "services" },
   ]
 });

@@ -20,6 +20,8 @@ import Media from "./Media";
 import LogoBanner from "./LogoBanner";
 import PortraitBanner from "./PortraitBanner";
 import OurWorkListing from "./OurWorkListing";
+import BrandIcons from "./BrandIcons";
+import Services from "./Services";
 
 
 export default function CustomPortableText({
@@ -40,6 +42,8 @@ export default function CustomPortableText({
       logoBanner: ({ value }) => <LogoBanner {...value} />,
       portraitBanner: ({ value }) => <PortraitBanner {...value} />,
       ourWorkListing: ({ value }) => <OurWorkListing {...value} />,
+      brandIcons: ({ value }) => <BrandIcons {...value} />,
+      services: ({ value }) => <Services {...value} />,
     },
   };
 
