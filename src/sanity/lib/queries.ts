@@ -180,6 +180,29 @@ const servicesFields = `
   }
 `
 
+const teamFields = `
+  title,
+  introImage{
+    "imageUrl": asset->url,
+    "imageDimensions": asset->metadata.dimensions
+  },
+  introText[]{
+    ...,
+    ${richTextFields}
+  },
+  members[]{
+    ...,
+    "image":{
+      "imageUrl": image.asset->url,
+      "imageDimensions": image.asset->metadata.dimensions
+    },
+    about[]{
+      ...,
+      ${richTextFields}
+    },
+  }
+`
+
 const pageFields = `
   _id,
   "status": select(_originalId in path("drafts.**") => "draft", "published"),
@@ -224,6 +247,10 @@ const pageFields = `
     _type == 'services' => {
      ...,
      ${servicesFields}
+    },
+    _type == 'team' => {
+     ...,
+     ${teamFields}
     },
   },
   metaData{

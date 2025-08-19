@@ -15,5 +15,6 @@ export default defineType({
     { type: "ourWorkListing" },
     { type: "brandIcons" },
     { type: "services" },
+    { type: "team" },
   ]
 });

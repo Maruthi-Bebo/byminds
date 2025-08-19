@@ -187,6 +187,20 @@ body {
   height: 331px;
   animation: logoSvgAnime 2s ease-out 1 forwards 6s;
 }
+
+.brandIcons .brandIconsList img{
+  opacity: 0;
+  transform: translateY(-20px);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.brandIcons .brandIconsList.activeList img{
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+}
+
 @keyframes logoSvgAnime{
   0%{
     width: 1321px;
