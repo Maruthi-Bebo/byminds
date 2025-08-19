@@ -17,6 +17,8 @@ import ourWorkListing from "./sections/ourWorkListing";
 import brandIcons from "./sections/brandIcons";
 import services from "./sections/services";
 import team from "./sections/team";
+import otherMembers from "./sections/otherMembers";
+import newsletter from "./sections/newsletter";
 
 const schema = {
   types: [
@@ -45,7 +47,9 @@ const schema = {
     ourWorkListing,
     brandIcons,
     services,
-    team
+    team,
+    otherMembers,
+    newsletter
   ]
 }
 

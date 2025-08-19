@@ -203,6 +203,16 @@ const teamFields = `
   }
 `
 
+const otherMembersFields = `
+  members[]{
+    ...,
+    about[]{
+      ...,
+      ${richTextFields}
+    },
+  }
+`
+
 const pageFields = `
   _id,
   "status": select(_originalId in path("drafts.**") => "draft", "published"),
@@ -251,6 +261,10 @@ const pageFields = `
     _type == 'team' => {
      ...,
      ${teamFields}
+    },
+    _type == 'otherMembers' => {
+     ...,
+     ${otherMembersFields}
     },
   },
   metaData{

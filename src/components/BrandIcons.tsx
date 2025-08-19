@@ -17,7 +17,6 @@ interface BrandIconsProps{
 
 export default function BrandIcons(props: BrandIconsProps) {
     const [activeIndex, setActiveIndex] = useState(0);
-    console.log("BrandIcons", props);
     
     function chunkArray<T>(arr: T[], size: number): T[][] {
         const result: T[][] = [];
@@ -28,16 +27,14 @@ export default function BrandIcons(props: BrandIconsProps) {
     }
 
     const iconSets = chunkArray(props.icons, 5);
-    console.log("iconSets", iconSets);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % iconSets.length);
-        }, 3000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, [iconSets.length]);
-console.log("activeIndex", activeIndex);
 
     return (
         <div className="brandIcons pt-[9rem] pb-[24rem]">

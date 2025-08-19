@@ -3,6 +3,7 @@ import { PortableTextBlock } from "next-sanity"
 import CustomRichText from "./CustomRichText";
 import Animate from "./Animate";
 import Media from "./Media";
+import CalendlyButton from "./CalendlyButton";
 
 interface ServicesProps{
     title1: string;
@@ -26,8 +27,8 @@ export default function Services(props: ServicesProps) {
     // }
     // style={{backgroundImage: `url(${bgImage})`}}
     return (
-        <div className="portraitBanner relative pt-[24rem] pb-[24rem] text-background overflow-hidden">
-            <div className="absolute h-full w-full top-0 left-0">
+        <div className="services relative pt-[24rem] pb-[24rem] text-background overflow-hidden">
+            <div className="absolute h-full w-full top-0 left-0 z-[-1]">
                 <Media {...props.media} className="w-full h-full object-cover"/>
             </div>
             <Animate fromDown className="mb-[14rem]">
@@ -53,6 +54,12 @@ export default function Services(props: ServicesProps) {
                     </li>
                 ))}
             </ul>
+            <div className="text-center mt-[13rem]">
+                <CalendlyButton
+                    buttonLabel="Schedule a Strategic Conversation"
+                    calendlyUrl="https://calendly.com/connect-by-minds/introduction-call"
+                />
+            </div>
         </div>
     )
 }

@@ -40,6 +40,10 @@
   @apply text-[5rem] tracking-[-0.5px] font-generalSans font-[500] leading-[5.5rem];
 }
 
+@utility bigTitleBold {
+  @apply text-[6rem] tracking-[-0.5px] font-generalSans font-[600] leading-[6.5rem];
+}
+
 @utility web-h1 {
   @apply text-[3rem] tracking-[-0.5px] font-satoshi font-[700] leading-[3.4rem];
 }
@@ -74,6 +78,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-montserrat), sans-serif;
+}
+
+input:focus,
+button:focus{
+  outline: 0;
 }
 
 .fromDown {

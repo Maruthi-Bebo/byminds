@@ -16,5 +16,7 @@ export default defineType({
     { type: "brandIcons" },
     { type: "services" },
     { type: "team" },
+    { type: "otherMembers" },
+    { type: "newsletter" },
   ]
 });
