@@ -12,10 +12,9 @@ interface OtherMembersProps {
 }
 
 export default function OtherMembers(props: OtherMembersProps) {
-    console.log("props others", props);
     
     return (
-        <ul className="otherMembers px-[20rem] gap-y-[9rem] flex flex-wrap justify-between">
+        <ul className="otherMembers pt-[20rem] px-[20rem] gap-y-[9rem] flex flex-wrap justify-between">
             {props.members.map((member) => (
                 <li key={member._key} className="w-[40%]">
                     <Animate fromDown>

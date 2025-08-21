@@ -2,7 +2,8 @@ import { TCustomMedia } from "@/app.types"
 import { PortableTextBlock } from "next-sanity"
 import CustomRichText from "./CustomRichText";
 import Animate from "./Animate";
-import Media from "./Media";
+import { useRef } from 'react';
+import { useIsBottomVisible } from "@/hooks/useIsBottomVisible";
 
 interface PortraitBannerProps{
     caption: string,
@@ -15,16 +16,22 @@ interface PortraitBannerProps{
 }
 
 export default function PortraitBanner(props: PortraitBannerProps) {
+    const bannerRef = useRef<HTMLDivElement>(null);
+    const isBottomVisible = useIsBottomVisible(bannerRef as React.RefObject<HTMLElement>);
+
     // let bgImage;
     // if (props.media.mediaType === "image") {
     //     bgImage = props.media.image?.desktopImage?.imageUrl;
     // }
     // style={{backgroundImage: `url(${bgImage})`}}
     return (
-        <div className="portraitBanner relative pt-[28.5rem] pb-[22.6rem] text-background overflow-hidden">
-            <div className="absolute h-full w-full top-0 left-0">
+        <div 
+            ref={bannerRef}
+            className={`portraitBanner relative pt-[28.5rem] pb-[18rem] text-foreground overflow-hidden sectionUnderline ${isBottomVisible ? 'sectionUnderlineActive' : ''}`}
+        >
+            {/* <div className="absolute h-full w-full top-0 left-0">
                 <Media {...props.media} className="w-full h-full object-cover"/>
-            </div>
+            </div> */}
             <Animate fromDown>
                 <p className="font-generalSans text-[2rem] font-[500] text-greenLight uppercase text-center tracking-[1rem] mb-[2rem]">{props.caption}</p>
             </Animate>

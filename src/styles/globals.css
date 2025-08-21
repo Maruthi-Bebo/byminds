@@ -18,6 +18,7 @@
   /* fonts */
   --font-generalSans: var(--font-generalSans), sans-serif;
   --font-satoshi: var(--font-satoshi), sans-serif;
+  --font-manrope: var(--font-manrope), sans-serif;
 
   /* breakpoints */
   --breakpoint-sm: 640px;
@@ -54,6 +55,10 @@
 
 @utility web-p2 {
   @apply text-[2rem] tracking-[-0.2px] font-generalSans leading-[2.6rem];
+}
+
+@utility web-p3 {
+  @apply text-[1.8rem] tracking-[-0.2px] font-generalSans leading-[2.4rem];
 }
 
 @utility web-h2 {
@@ -128,9 +133,53 @@ button:focus{
   scrollbar-width: none; /* Firefox */
 }
 
+.sectionUnderline::after {
+  content: "";
+  position: absolute;
+  left: 7.5%;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--foreground);
+  transition: width 0.5s ease-out;
+}
+.sectionUnderline.sectionUnderlineActive::after {
+  width: 85%;
+}
+
+.mainLogo span {
+  transform: translateY(400px);
+  display: inline-block;
+}
+.active .mainLogo span{
+  animation: mainLogoCharsAnime 0.5s ease-out 1 forwards;
+}
+
+@keyframes mainLogoCharsAnime {
+  0% {
+    transform: translateY(400px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.blackBanner{
+  opacity: 1;
+  animation: blackBannerAnime 1s ease-out 1 forwards 2.8s;
+}
+@keyframes blackBannerAnime{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
 .logoBanner .caption{
   transform: translateY(50px);
-  animation: logoCaptionAnime 3s ease-in-out 1 forwards 3.5s;
+  animation: logoCaptionAnime 2.5s ease-in-out 1 forwards 0.3s;
 }
 @keyframes logoCaptionAnime{
   0%{
@@ -154,10 +203,53 @@ button:focus{
   }
 }
 
+.footer .logoContainer .caption{
+  transform: translateY(50px);
+}
+
+.footer.active .logoContainer .caption{
+  animation: logoCaptionAnime2 2.5s ease-in-out 1 forwards 0.3s;
+}
+@keyframes logoCaptionAnime2{
+  0%{
+    transform: translateY(50px);
+  }
+  40%{
+    transform: translateY(0px);
+  }
+  80%{
+    transform: translateY(0px);
+  }
+  99%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+
+.logoBanner.active .logoContainer {
+  /* font-size: 340px; */
+  scale: 1;
+  animation: logoSpanShrink 1s ease-in-out 1 forwards 2.2s;
+}
+
+@keyframes logoSpanShrink {
+  from {
+    scale: 1;
+    top: calc(100% - 380px);
+  }
+  to {
+    scale: 0.18;
+    top: -16%;
+  }
+}
+
 /* logo svg animation */
 
-.logoSvgContainer.animate svg path{
-  fill: transparent;
+/* .logoSvgContainer.animate svg path{
+  fill: #FFFFFF;
   stroke: #FFFFFF;
   stroke-width: 0.2;
   stroke-dasharray: 1000;
@@ -169,7 +261,7 @@ button:focus{
     stroke-dashoffset: 1000;
   }
   60%{
-    fill: transparent;
+    
   }
   100%{
     fill: #FFFFFF;
@@ -178,11 +270,11 @@ button:focus{
 }
 
 .logoSvgContainer{
-  /* bottom: 5px; */
   top: 60%;
   animation: logoSvgContainerAnime 2s ease-out 1 forwards 6s;
-}
-@keyframes logoSvgContainerAnime{
+} */
+
+/* @keyframes logoSvgContainerAnime{
   0%{
     top: 60%;
   }
@@ -195,7 +287,7 @@ button:focus{
   width: 1321px;
   height: 331px;
   animation: logoSvgAnime 2s ease-out 1 forwards 6s;
-}
+} */
 
 .brandIcons .brandIconsList img{
   opacity: 0;
@@ -220,18 +312,7 @@ button:focus{
     height: 63px;
   }
 }
-.blackBanner{
-  opacity: 1;
-  animation: blackBannerAnime 1s ease-out 1 forwards 7s;
-}
-@keyframes blackBannerAnime{
-  0%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-  }
-}
+
 
 
 @media screen and (max-width: 1024px) {

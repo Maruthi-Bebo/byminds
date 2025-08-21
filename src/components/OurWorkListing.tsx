@@ -26,10 +26,9 @@ interface OurWorkListingProps {
 }
 
 export default function OurWorkListing(props: OurWorkListingProps) {
-    console.log("case studies", props);
     
     return (
-        <div className="ourWorkListing pt-[27rem]">
+        <div className="ourWorkListing pt-[18rem]">
             <div className="relative">
               <div className="sticky top-0 pt-[1rem] pb-[1rem] text-center bg-background z-[1]">
                 <Animate fromDown>

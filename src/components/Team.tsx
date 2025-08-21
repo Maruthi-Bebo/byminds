@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import TeamSlider from './TeamSlider';
+import TeamHorizontalScroll from './TeamHorizontalScroll';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,7 +102,8 @@ export default function Team(props: TeamProps) {
                 <h3 ref={textRef} className='titleText w-full absolute font-generalSans text-[6.6rem] font-[600] text-center left-0'>{props.title}</h3>
             </div>
         
-            <TeamSlider {...props}/>
+            {/* <TeamSlider {...props}/> */}
+            <TeamHorizontalScroll {...props}/>
         </div>
     )
 }

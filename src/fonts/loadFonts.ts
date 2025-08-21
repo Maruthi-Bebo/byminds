@@ -37,3 +37,14 @@ export const satoshi = localFont({
   variable: "--font-satoshi"
 });
 
+export const manrope = localFont({
+  src: [
+    {
+      path: "./Manrope-ExtraBold.ttf",
+      style: "extrabold",
+      weight: "800",
+    },
+  ],
+  variable: "--font-manrope"
+});
+
