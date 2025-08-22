@@ -26,6 +26,8 @@ interface SingleCaseSliderProps {
 
 export default function SingleCaseSlider(props: SingleCaseSliderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const [isActive, setIsActive] = useState(false);
   const listRef = useRef<HTMLUListElement>(null);
   const scrollTween = useRef<gsap.core.Tween | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -152,7 +154,7 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
         left: container.scrollLeft,
         x: e.clientX,
       };
-      container.style.cursor = 'grabbing';
+      // container.style.cursor = 'grabbing';
     };
 
     const mouseMoveHandler = (e: MouseEvent) => {
@@ -164,7 +166,7 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
     const mouseUpHandler = () => {
       setIsDragging(false);
       scrollTween.current?.play();
-      container.style.cursor = 'grab';
+      // container.style.cursor = 'grab';
     };
 
     container.addEventListener('mousedown', mouseDownHandler);
@@ -172,7 +174,7 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
     container.addEventListener('mouseup', mouseUpHandler);
     container.addEventListener('mouseleave', mouseUpHandler);
 
-    container.style.cursor = 'grab';
+    // container.style.cursor = 'grab';
 
     return () => {
       container.removeEventListener('mousedown', mouseDownHandler);
@@ -205,6 +207,30 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const container = containerRef.current;
+    const cursor = cursorRef.current;
+    if (!container || !cursor) return;
+
+    const handleMouseEnter = () => setIsActive(true);
+    const handleMouseLeave = () => setIsActive(false);
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isActive) return;
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    };
+
+    container.addEventListener("mouseenter", handleMouseEnter);
+    container.addEventListener("mouseleave", handleMouseLeave);
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      container.removeEventListener("mouseenter", handleMouseEnter);
+      container.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [isActive]);
   return (
     <div>
       <div
@@ -280,6 +306,14 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
           </div>
         </div>
       </div>
+      <div
+        ref={cursorRef}
+        className={`pointer-events-none fixed z-[9999] w-[15rem] h-[15rem] bg-[url('/images/dragCursor.png')] bg-contain bg-no-repeat transition-opacity duration-200`}
+        style={{
+          transform: "translate(-50%, -50%)",
+          opacity: isActive ? 1 : 0,
+        }}
+      />
     </div>
   );
 }

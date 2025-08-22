@@ -25,6 +25,7 @@ import Services from "./Services";
 import Team from "./Team";
 import OtherMembers from "./OtherMembers";
 import Newsletter from "./Newsletter";
+import Map from "./Map";
 
 
 export default function CustomPortableText({
@@ -50,6 +51,7 @@ export default function CustomPortableText({
       team: ({ value }) => <Team {...value} />,
       otherMembers: ({ value }) => <OtherMembers {...value} />,
       newsletter: ({ value }) => <Newsletter {...value} />,
+      map: ({ value }) => <Map {...value} />,
     },
   };
 

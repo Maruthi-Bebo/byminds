@@ -18,5 +18,6 @@ export default defineType({
     { type: "team" },
     { type: "otherMembers" },
     { type: "newsletter" },
+    { type: "map" },
   ]
 });

@@ -314,6 +314,41 @@ button:focus{
 }
 
 
+.animate-bounce-pop {
+  animation: bounce-pop 0.6s ease-out forwards;
+}
+
+@keyframes bounce-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(3);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-hover:hover {
+  animation: rotateClockwise 5s linear infinite;
+}
 
 @media screen and (max-width: 1024px) {
   .onlyMobile.fromDown {
