@@ -43,25 +43,25 @@ const NavBar = () => {
     <header className={`fixed top-0 w-full left-0 z-50 bg-white transition-transform duration-[0.5s] ease-out ${
       (scrolled && showNav) ? 'translate-y-0 ' : 'translate-y-[-100%]'
     }`}>
-      <nav className="navContainer px-[5rem] h-[10rem] flex items-center justify-between w-full border-b-[2px] border-foreground">
+      <nav className="navContainer px-[5rem] h-[6rem] flex items-center justify-between w-full">
         <div className="flex items-center gap-[2rem]">
-          <Link href="/playground" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[500]">
+          <Link href="/playground" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
             Playground
           </Link>
-          <Link href="/services" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[500]">
+          <Link href="/services" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
             Services
           </Link>
         </div>
 
         <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
-          <img src="/images/logoNavBlack.svg" width={217} height={63} className="w-[21.7rem] h-auto"/>
+          <img src="/images/logoNavBlack.svg" width={217} height={63} className="w-[16.6rem] h-auto"/>
         </Link>
 
         <div className="flex items-center gap-[2rem]">
-          <Link href="/discovery-call" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[500]">
+          <Link href="/discovery-call" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
             Discovery Call
           </Link>
-          <Link href="/contact" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[500]">
+          <Link href="/contact" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
             Say Hello
           </Link>
         </div>

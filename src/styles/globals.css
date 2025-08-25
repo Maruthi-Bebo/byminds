@@ -136,7 +136,7 @@ button:focus{
 .sectionUnderline::after {
   content: "";
   position: absolute;
-  left: 7.5%;
+  left: 3%;
   bottom: 0;
   width: 0%;
   height: 1px;
@@ -144,7 +144,7 @@ button:focus{
   transition: width 0.5s ease-out;
 }
 .sectionUnderline.sectionUnderlineActive::after {
-  width: 85%;
+  width: 94%;
 }
 
 .mainLogo span {
@@ -153,6 +153,9 @@ button:focus{
 }
 .active .mainLogo span{
   animation: mainLogoCharsAnime 0.5s ease-out 1 forwards;
+}
+p:empty{
+  height: 1rem;
 }
 
 @keyframes mainLogoCharsAnime {

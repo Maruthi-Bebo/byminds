@@ -18,7 +18,7 @@ interface PortraitBannerProps{
 export default function PortraitBanner(props: PortraitBannerProps) {
     const bannerRef = useRef<HTMLDivElement>(null);
     const isBottomVisible = useIsBottomVisible(bannerRef as React.RefObject<HTMLElement>);
-
+   
     // let bgImage;
     // if (props.media.mediaType === "image") {
     //     bgImage = props.media.image?.desktopImage?.imageUrl;
@@ -35,7 +35,7 @@ export default function PortraitBanner(props: PortraitBannerProps) {
             <Animate fromDown>
                 <p className="font-generalSans text-[2rem] font-[500] text-greenLight uppercase text-center tracking-[1rem] mb-[2rem]">{props.caption}</p>
             </Animate>
-            <Animate fromDown>
+            <Animate fromDown threshold={1}>
                 <CustomRichText value={props.title} className="text-center mb-[15rem] bigTitle w-[97rem] mx-auto"/>
             </Animate>
             <ul className="flex flex-col items-center gap-[8rem]">

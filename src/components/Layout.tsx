@@ -40,13 +40,13 @@ const Layout = (props: LayoutProps) => {
       scrollInstance.current = scroll;
 
       // Wait one tick to ensure Locomotive is ready
-      requestAnimationFrame(() => {
-        scroll.stop();
+      // requestAnimationFrame(() => {
+      //   scroll.stop();
 
-        setTimeout(() => {
-          scroll.start();
-        }, 3500);
-      });
+      //   setTimeout(() => {
+      //     scroll.start();
+      //   }, 3500);
+      // });
     };
 
     initScroll();

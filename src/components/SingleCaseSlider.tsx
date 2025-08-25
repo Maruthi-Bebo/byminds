@@ -191,7 +191,7 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
     const handleScroll = () => {
       if (text1Ref.current) {
         const rect = text1Ref.current.getBoundingClientRect();
-        const viewportCenter = 450;
+        const viewportCenter = 300;
         
         if (rect.top < viewportCenter) {
           setShowSecond(true);

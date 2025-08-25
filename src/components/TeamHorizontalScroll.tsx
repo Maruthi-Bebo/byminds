@@ -78,17 +78,16 @@ export default function TeamHorizontalScroll(props: TeamProps) {
                         </div>
                     </div>
                     {props.members.map((member) => (
-                        <div key={member._key} className='w-screen flex justify-center items-center pt-[20rem] pb-[10rem]'>
-                            <div className='flex flex-col items-center'>
-                                <div className='relative'>
-                                    <img src={member.image.imageUrl} alt={`${member.firstName} ${member.lastName}`} width={414} height={518} className='h-[calc(100vh-28rem)] w-auto object-fit'/>
-                                    <div className='bigTitleBold absolute top-0 w-full text-center translate-y-[-50%]'> 
-                                        <p className='text-[#030303]'>{member.firstName}</p>
-                                        <p className='text-[#FFFFFF]'>{member.lastName}</p>
-                                    </div>
+                        <div key={member._key} className='w-screen flex items-center justify-center'>
+                            <div className='flex items-center px-[12%]'>
+                                <div className='w-[40%]'>
+                                    <img src={member.image.imageUrl} alt={`${member.firstName} ${member.lastName}`} width={414} height={518} className='w-full h-auto'/>
                                 </div>
-                                <p className='mt-[2rem] mb-[2rem] web-h3 text-[2rem]'>{member.role}</p>
-                                <CustomRichText value={member.about} className='web-p3 text- text-center w-[90rem]'/>
+                                <div className='w-[60%] pl-[5%] pr-[11%]'>
+                                    <p className='text-[#030303] bigTitleBold'>{member.firstName} {member.lastName}</p>
+                                    <p className='mt-[1rem] mb-[6rem] web-h3 text-[2rem]'>{member.role}</p>
+                                    <CustomRichText value={member.about} className='web-p3'/>
+                                </div>
                             </div>
                         </div>
                     ))}

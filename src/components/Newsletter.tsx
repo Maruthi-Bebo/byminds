@@ -15,9 +15,12 @@ export default function Newsletter(props: NewsletterProps) {
             <Animate fromDown>
                 <p className="web-p2 mb-[3rem]">{props.title}</p>
                 <p className="web-h2 mb-[6rem]">{props.heading}</p>
-                <form onSubmit={handleSubmit} className="mx-auto w-[40rem] flex py-[1rem] px-[2.3rem] bg-greenLight web-p2">
+                <form onSubmit={handleSubmit} className="mx-auto w-[40rem] flex py-[1rem] px-[2.2rem] pr-[4.5rem] bg-greenLight web-p2 relative">
                     <label htmlFor="email" className="w-[25%] text-left">email id:</label>
                     <input className="w-[75%]" type="email" id="email" name="email" required />
+                    <button type="submit" className="cursor-pointer absolute right-0 top-[50%] translate-y-[-50%] w-[4rem] h-[4rem] flex justify-center items-center">
+                        <img src="/images/right-arrow.svg" width={24} height={24} className="w-[3rem] h-auto"/>
+                    </button>
                 </form>
             </Animate>
         </div>

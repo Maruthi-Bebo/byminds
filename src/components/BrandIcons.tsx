@@ -37,7 +37,7 @@ export default function BrandIcons(props: BrandIconsProps) {
     }, [iconSets.length]);
 
     return (
-        <div className="brandIcons pt-[9rem] pb-[24rem]">
+        <div className="brandIcons pt-[18rem] pb-[24rem]">
             <Animate fromDown>
                 <p className="text-center mb-[1.5rem] web-p1">{props.caption}</p>
             </Animate>
