@@ -53,7 +53,7 @@ export default function Team(props: TeamProps) {
 
         const mm = gsap.matchMedia()
 
-        mm.add("(min-width:768px)", () => {
+        mm.add("(min-width:1400px)", () => {
             const timeline = gsap.timeline({
                 scrollTrigger: {
                 trigger: section,
@@ -72,23 +72,42 @@ export default function Team(props: TeamProps) {
             );
         })
 
-        mm.add("(max-width:768px)", () => {
-        const timeline = gsap.timeline({
-            scrollTrigger: {
-            trigger: '.zoomOutTextContainer',
-            start: "top top",
-            end: "+=1000",
-            scrub: true,
-            // pin: true,   
-            // pinSpacing: false,
-            // markers:true
-            },
+        mm.add("(min-width:967px)", () => {
+            const timeline = gsap.timeline({
+                scrollTrigger: {
+                trigger: section,
+                start: "top top",
+                end: "+=1000",
+                scrub: true,
+                // pin: true,   
+                // pinSpacing: false,
+                // markers:true
+                },
+            })
+            timeline.fromTo(
+                textElement,
+                { scale: 1.8, top: "50%", y: "-50%" },
+                { scale: 1, top:"0%", y: "0%", ease: "power3.out", duration: 1 }
+            );
         })
-        timeline.fromTo(
-            '.zoomOutText',
-            { scale: 6, top: "0%", y: "0%" },
-            { scale: 1, top:"50%", y: "-50%", ease: "power3.out", duration: 1 }
-        );
+
+        mm.add("(max-width:966px)", () => {
+            const timeline = gsap.timeline({
+                scrollTrigger: {
+                trigger: section,
+                start: "top top",
+                end: "+=1000",
+                scrub: true,
+                // pin: true,   
+                // pinSpacing: false,
+                // markers:true
+                },
+            })
+            timeline.fromTo(
+                textElement,
+                { scale: 1.6, top: "50%", y: "-50%" },
+                { scale: 1, top:"0%", y: "0%", ease: "power3.out", duration: 1 }
+            );
         })
         // return () => {
         //     tl.kill();
@@ -97,9 +116,9 @@ export default function Team(props: TeamProps) {
     }, []);
     
     return (
-        <div className='team'>
+        <div className='team overflow-hidden'>
             <div ref={sectionRef} className='h-screen relative'>
-                <h3 ref={textRef} className='titleText w-full absolute font-generalSans text-[6.6rem] font-[600] text-center left-0'>{props.title}</h3>
+                <h3 ref={textRef} className='titleText max-tab:mob-h2 w-full absolute font-generalSans text-[6.6rem] font-[600] text-center left-0'>{props.title}</h3>
             </div>
         
             {/* <TeamSlider {...props}/> */}

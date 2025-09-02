@@ -25,7 +25,8 @@ export default function Media(props: Props) {
           className={props.className}
           width={props.width}
           height={props.height}
-          // defaultMediaLoading={props.defaultMediaLoading}
+          // defaultMediaLoading={props.d
+          // efaultMediaLoading}
           // mobileMediaLoading={props.mobileMediaLoading}
         />
       )}
@@ -37,6 +38,7 @@ export default function Media(props: Props) {
           height={props.height}
           defaultMediaLoading={props.defaultMediaLoading}
           mobileMediaLoading={props.mobileMediaLoading}
+          containerClassName={props.containerClassName}
         />
       )}
     </>

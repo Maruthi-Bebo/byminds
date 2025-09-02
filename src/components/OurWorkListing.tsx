@@ -49,12 +49,12 @@ export default function OurWorkListing(props: OurWorkListingProps) {
     }, []);
 
     return (
-        <div ref={sectionRef} className={`ourWorkListing pt-[18rem] pb-[18rem] relative sectionUnderline ${isBottomAtCenter ? 'sectionUnderlineActive' : ''}`}>
+        <div ref={sectionRef} className={`ourWorkListing pt-[18rem] pb-[18rem] max-md:py-[10rem] relative sectionUnderline ${isBottomAtCenter ? 'sectionUnderlineActive' : ''}`}>
             <div className="relative">
-              <div className="pt-[1rem] pb-[1rem] text-center bg-background z-[1]">
+              <div className="max-md:p-0 px-[2rem] text-center bg-background z-[1]">
                 <Animate fromDown>
-                  {props.title && <CustomRichText value={props.title} className="web-h2 mb-[1rem]"/>}
-                  {props.caption && <p className="web-p1">{props.caption}</p>}
+                  {props.title && <CustomRichText value={props.title} className="web-h2 mb-[1rem] max-md:mob-h2"/>}
+                  {props.caption && <p className="web-p1 max-md:mob-p1">{props.caption}</p>}
                 </Animate>
               </div>
               <div>

@@ -24,7 +24,7 @@ export default function CalendlyButton(props: { buttonLabel: string, className?:
                 src="https://assets.calendly.com/assets/external/widget.js"
                 strategy="afterInteractive"
             />
-            <button onClick={openCalendly} className={`${props.className} cursor-pointer web-p2 py-[1rem] px-[2.7rem] bg-greenLight`}>{props.buttonLabel}</button>
+            <button onClick={openCalendly} className={`${props.className} cursor-pointer text-foreground web-p2 max-md:mob-p2 py-[1rem] px-[2.7rem] bg-greenLight max-md:py-[8px] max-md:px-[1.5rem]`}>{props.buttonLabel}</button>
         </>
     )
 }

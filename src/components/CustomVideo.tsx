@@ -65,6 +65,7 @@ export default function CustomVideo(props: CustomVideoProps) {
     // width = "100%",
     // height = "auto",
     className,
+    containerClassName,
     // containerClassName,
     // mobileMediaLoading,
     // defaultMediaLoading,
@@ -83,7 +84,7 @@ export default function CustomVideo(props: CustomVideoProps) {
 
   return (
     <>
-      <div>
+      <div className={` ${containerClassName ?? ""}`}>
         <video
           width={desktopVideo.videoDimensions?.width}
           height={desktopVideo.videoDimensions?.height}

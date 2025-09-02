@@ -44,7 +44,7 @@ const NavBar = () => {
       (scrolled && showNav) ? 'translate-y-0 ' : 'translate-y-[-100%]'
     }`}>
       <nav className="navContainer px-[5rem] h-[6rem] flex items-center justify-between w-full">
-        <div className="flex items-center gap-[2rem]">
+        <div className="flex items-center gap-[2rem] max-lg:hidden">
           <Link href="/playground" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
             Playground
           </Link>
@@ -54,10 +54,10 @@ const NavBar = () => {
         </div>
 
         <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
-          <img src="/images/logoNavBlack.svg" width={217} height={63} className="w-[16.6rem] h-auto"/>
+          <img src="/images/logoNavBlack.svg" width={217} height={63} className="w-[16.6rem] h-auto max-md:w-[12rem]"/>
         </Link>
 
-        <div className="flex items-center gap-[2rem]">
+        <div className="flex items-center gap-[2rem] max-lg:hidden">
           <Link href="/discovery-call" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
             Discovery Call
           </Link>

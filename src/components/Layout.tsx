@@ -87,8 +87,8 @@ const Layout = (props: LayoutProps) => {
         <NavBar />
         <main>{props.children}</main>
         {/* {props.footerData && <Footer {...props.footerData} />} */}
-        <Footer />
-        <div onClick={scrollToTop} className={`${isScrolledPastViewport?"translate-y-[0]":"translate-y-[15rem]"} z-[9] duration-[0.3s] ease-out transition-all w-[10rem] h-[10rem] fixed bottom-[3rem] right-[4rem] cursor-pointer`}>
+        {/* <Footer /> */}
+        <div onClick={scrollToTop} className={`${isScrolledPastViewport?"translate-y-[0]":"translate-y-[15rem]"} z-[9] duration-[0.3s] ease-out transition-all w-[10rem] h-[10rem] fixed bottom-[3rem] right-[4rem] cursor-pointer max-md:hidden`}>
           <img src="/images/scrollupArrow.png" width={28} height={37} className="w-[2.8rem] h-[auto] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"/>
           <img src="/images/scrollup.png" width={100} height={100} className="rotate-hover w-[10rem] h-[auto] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"/>
         </div>

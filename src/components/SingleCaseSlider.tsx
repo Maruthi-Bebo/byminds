@@ -235,12 +235,12 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
     <div>
       <div
         ref={containerRef}
-        className="singleCaseSlider mb-[4rem] pt-[10rem] overflow-x-scroll scrollbar-hidden px-[5.4rem] select-none"
+        className="singleCaseSlider mb-[4rem] pt-[10rem] max-md:pt-[8rem] overflow-x-scroll scrollbar-hidden px-[5.4rem] select-none"
       >
         <ul ref={listRef} className="flex gap-[1.6rem] w-max relative">
           <div className="h-full w-full absolute transparent z-[1] top-0 left-0"></div>
           {images.concat(images).map((image, idx) => (
-            <li key={idx} className="w-[37.6rem] h-[47.4rem]">
+            <li key={idx} className="w-[37.6rem] h-[47.4rem] max-md:w-[30rem] max-md:h-[40rem]">
               <img
                 loading="lazy"
                 alt={props.caseItem?.heading}
@@ -253,11 +253,12 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
           ))}
         </ul>
       </div>
-      <div className="px-[5.4rem] flex justify-between">
+      <div className="px-[5.4rem] flex justify-between max-md:px-[2rem]">
         <div className="">
-          <p className="text-[4rem] font-[500] font-generalSans text-box-trim mb-[2rem]">{props.caseItem?.heading}</p>
-          <p className="web-p2 mb-[1rem]">{props.caseItem?.caption}</p>
-          <div>
+          <p className="text-[4rem] max-lg:text-[3rem] font-[500] font-generalSans text-box-trim mb-[2rem] max-lg:mb-[1rem]">{props.caseItem?.heading}</p>
+          <p className="web-p2 mb-[1rem] max-lg:mob-p2 max-md:mb-[2rem]">{props.caseItem?.caption}</p>
+          <p className="web-p2 max-lg:mob-p2 hidden max-md:block">{props.caseItem?.aboutContent}</p>
+          <div className="max-md:mt-[2rem]">
             {props.caseItem?.roles?.map((role, id)=>(
               <p key={`role_item_${id}`} className="text-[1.4rem] font-generalSans flex gap-[2rem]">
                 <span className="text-greyText w-[15rem]">{role.roleName}</span>
@@ -276,7 +277,7 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
             <p className="text-[2.2rem] font-generalSans font-[400] tracking-[0.5px]">{props.caseItem?.aboutContent}</p>
           </div>
         </div> */}
-        <div className="relative w-[52.6rem] h-[15rem] overflow-hidden">
+        <div className="relative w-[52.6rem] h-[15rem] max-lg:w-[39rem] overflow-hidden max-tab:hidden">
           <div ref={text1Ref} className="absolute top-0 h-0 w-full" />
 
           <div
@@ -284,10 +285,10 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
               showSecond ? "opacity-0 translate-y-[-20px]" : "opacity-100 translate-y-[0px] delay-[0.5s]"
             }`}
           >
-            <p className="web-h3 mb-[0.4rem]">
+            <p className="web-h3 mb-[0.4rem] max-lg:mob-h3 ">
               {props.caseItem?.aboutLabel}
             </p>
-            <p className="web-p2">
+            <p className="web-p2 max-lg:mob-p2">
               {props.caseItem?.aboutContent}
             </p>
           </div>
@@ -297,10 +298,10 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
               showSecond ? "opacity-100 translate-y-[0px] delay-[0.5s]" : "opacity-0 translate-y-[20px]"
             }`}
           >
-            <p className="web-h3 mb-[0.4rem]">
+            <p className="web-h3 mb-[0.4rem] max-lg:mob-h3">
               {props.caseItem?.impactLabel}
             </p>
-            <p className="web-p2">
+            <p className="web-p2 max-lg:mob-p2">
               {props.caseItem?.impactContent}
             </p>
           </div>

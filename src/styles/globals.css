@@ -24,7 +24,8 @@
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-tab: 967px;
-  --breakpoint-lg: 1024px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-lg2: 1112px;
   --breakpoint-xl: 1280px;
   --breakpoint-xl2: 1380px;
   --breakpoint-2xl: 1536px;
@@ -67,6 +68,27 @@
 
 @utility web-h3 {
   @apply text-[2.2rem] tracking-[-0.2px] font-generalSans font-[700] leading-[2.8rem];
+}
+
+/* mobile fonts */
+@utility mob-h1 {
+  @apply text-[2.4rem] tracking-[-0.5px] font-satoshi font-[700] leading-[3rem];
+}
+
+@utility mob-h2 {
+  @apply text-[3rem] tracking-[-0.2px] font-generalSans font-[600] leading-[3.6rem];
+}
+
+@utility mob-h3 {
+  @apply text-[2rem] tracking-[-0.2px] font-generalSans font-[700] leading-[2.4rem];
+}
+
+@utility mob-p1 {
+  @apply text-[2rem] tracking-[-0.5px] font-generalSans font-[400] leading-[2.8rem];
+}
+
+@utility mob-p2 {
+  @apply text-[1.6rem] tracking-[-0.5px] font-generalSans font-[400] leading-[2.2rem];
 }
 
 @utility text-box-trim {
@@ -249,49 +271,6 @@ p:empty{
   }
 }
 
-/* logo svg animation */
-
-/* .logoSvgContainer.animate svg path{
-  fill: #FFFFFF;
-  stroke: #FFFFFF;
-  stroke-width: 0.2;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: mainBannerLogoAnime 5s ease-in-out 1 forwards;
-}
-@keyframes mainBannerLogoAnime{
-  0%{
-    stroke-dashoffset: 1000;
-  }
-  60%{
-    
-  }
-  100%{
-    fill: #FFFFFF;
-    stroke-dashoffset: 0;
-  }
-}
-
-.logoSvgContainer{
-  top: 60%;
-  animation: logoSvgContainerAnime 2s ease-out 1 forwards 6s;
-} */
-
-/* @keyframes logoSvgContainerAnime{
-  0%{
-    top: 60%;
-  }
-  100%{
-    top: 1%;
-  }
-}
-
-.logoSvgContainer svg{
-  width: 1321px;
-  height: 331px;
-  animation: logoSvgAnime 2s ease-out 1 forwards 6s;
-} */
-
 .brandIcons .brandIconsList img{
   opacity: 0;
   transform: translateY(-20px);
@@ -353,6 +332,27 @@ p:empty{
   animation: rotateClockwise 5s linear infinite;
 }
 
+
+/* @media screen and (max-width: 1360px) {
+  .logoBanner .mainLogo {
+    font-size: 24rem;
+  }
+} */
+
+@media screen and (max-width: 1112px) {
+  
+  @keyframes logoSpanShrink {
+    from {
+      scale: 1;
+      top: 50%;
+    }
+    to {
+      scale: 0.18;
+      top: 5%;
+    }
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .onlyMobile.fromDown {
     opacity: 0;
@@ -362,5 +362,23 @@ p:empty{
   .onlyMobile.fromDown.animate {
     opacity: 1;
     transform: translateY(0);
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .active .mainLogo span{
+    animation: mainLogoCharsAnime 0.8s ease-out 1 forwards;
+  }
+
+  @keyframes logoSpanShrink {
+    from {
+      scale: 1;
+      top: 50%;
+    }
+    to {
+      scale: 0.4;
+      top: 4%;
+    }
   }
 }
