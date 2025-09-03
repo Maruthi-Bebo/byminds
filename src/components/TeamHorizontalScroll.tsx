@@ -70,20 +70,20 @@ export default function TeamHorizontalScroll(props: TeamProps) {
                 ref={containerRef}
                 className="flex space-x-4"
             >
-                <div className="flex-none w-[auto] h-screen flex pt-[18rem] max-md:pt-[12rem] tab:pt-[8rem] pb-[10rem] gap-[3.5rem] max-md:gap-[0]">
-                    <div className="w-screen flex items-center justify-center">
+                <div className="flex-none w-[auto] h-screen flex pt-[18rem] max-md:pt-[8rem] tab:pt-[8rem] pb-[10rem] gap-[3.5rem] max-md:gap-[0]">
+                    <div className="w-screen flex items-center justify-center max-md:block">
                         <div className='flex items-center gap-[6.3rem] max-tab:gap-[3rem] max-md:flex-col'>
                             <img src={props.introImage.imageUrl} alt="Intro Image" width={414} height={518} className='w-[41.4rem] h-[51.8rem] max-tab:w-[30rem] max-md:w-full max-md:px-[4rem] h-auto object-fit'/>
                             <CustomRichText value={props.introText} className='w-[40rem] web-p2 max-tab:w-[30rem] max-md:w-full max-md:px-[4rem] max-tab:mob-p2'/>
                         </div>
                     </div>
                     {props.members.map((member) => (
-                        <div key={member._key} className='w-screen flex items-center justify-center'>
+                        <div key={member._key} className='w-screen flex items-center justify-center max-md:block'>
                             <div className='flex items-center px-[12%] max-md:flex-col max-md:px-[4rem]'>
                                 <div className='w-[40%] max-md:w-full max-md:mb-[2rem]'>
                                     <img src={member.image.imageUrl} alt={`${member.firstName} ${member.lastName}`} width={414} height={518} className='w-full h-auto'/>
                                 </div>
-                                <div className='w-[60%] pl-[5%] pr-[11%] max-lg:pr-0 max-md:w-full max-md:pl-0'>
+                                <div className='w-[60%] pl-[5%] pr-[11%] max-lg:pr-0 max-md:w-full max-md:pl-0 max-md:text-center'>
                                     <p className='text-[#030303] bigTitleBold max-lg:mob-h2'>{member.firstName} {member.lastName}</p>
                                     <p className='mt-[1rem] mb-[6rem] web-h3 text-[2rem] max-lg:mb-[3rem] max-md:mb-[1.5rem]'>{member.role}</p>
                                     <CustomRichText value={member.about} className='web-p3 max-lg:mob-p2'/>
