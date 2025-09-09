@@ -45,26 +45,26 @@ const NavBar = () => {
     }`}>
       <nav className="navContainer px-[5rem] h-[6rem] flex items-center justify-between w-full">
         <div className="flex items-center gap-[2rem] max-lg:hidden">
-          <Link href="/playground" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
+          {/* <Link href="/playground" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
             Playground
           </Link>
           <Link href="/services" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
             Services
-          </Link>
+          </Link> */}
         </div>
 
         <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
           <img src="/images/logoNavBlack.svg" width={217} height={63} className="w-[16.6rem] h-auto max-md:w-[12rem]"/>
         </Link>
 
-        <div className="flex items-center gap-[2rem] max-lg:hidden">
+        {/* <div className="flex items-center gap-[2rem] max-lg:hidden">
           <Link href="/discovery-call" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
             Discovery Call
           </Link>
           <Link href="/contact" className="text-black hover:opacity-70 transition-opacity font-generalSans text-[1.8rem] font-[400]">
             Say Hello
           </Link>
-        </div>
+        </div> */}
       </nav>
     </header>
   );

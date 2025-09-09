@@ -56,8 +56,8 @@ export default function Services(props: ServicesProps) {
             <Animate fromDown>
                 <div className="text-center mt-[13rem] max-md:mt-[8rem]">
                     <CalendlyButton
-                        buttonLabel="Schedule a Strategic Conversation"
-                        calendlyUrl="https://calendly.com/connect-by-minds/introduction-call"
+                        buttonLabel={props.buttonLabel}
+                        calendlyUrl="https://cal.com/ozlem-birkalan-ugtg7s/30min"
                     />
                 </div>
             </Animate>

@@ -33,7 +33,7 @@ console.log("logoVisible", logoVisible);
     <footer className={`${logoVisible?"active":""} footer bg-foreground pt-[9.5rem] max-md:pt-[10rem] pb-[5.2rem] text-background`}>
       <div className="px-[4.9rem]">
         <Animate fromDown>
-          <p className="w-[45rem] max-md:w-full text-center mx-auto mb-[2.3rem] max-md:mb-[1.3rem] web-p1 max-md:mob-p2">Ready to move beyond the tactical and build a brand that truly endures?</p>
+          <p className="w-[45rem] max-md:w-full text-center mx-auto mb-[2.3rem] max-md:mb-[1.3rem] web-p2 max-md:mob-p2">Ready to close the gap between your mission and your market? Let's build a brand people love.</p>
         </Animate>
         <Animate fromDown>
           <p className="w-[40rem] max-md:w-full text-center mx-auto web-h2 mb-[4.5rem]">Let’s turn ambition into brand equity.</p>
@@ -41,8 +41,8 @@ console.log("logoVisible", logoVisible);
         <Animate fromDown>
           <div className="text-center mb-[10rem]">
             <CalendlyButton
-                buttonLabel="Schedule a Strategic Conversation"
-                calendlyUrl="https://calendly.com/connect-by-minds/introduction-call"
+                buttonLabel="Schedule a strategic conversation"
+                calendlyUrl="https://cal.com/ozlem-birkalan-ugtg7s/30min"
             />
           </div>
         </Animate>
