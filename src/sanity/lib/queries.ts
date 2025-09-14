@@ -158,6 +158,9 @@ const brandIconsFields = `
     ...,
     icon{
       "imageUrl": asset->url,
+    },
+    mobileIcon{
+      "imageUrl": asset->url,
     }
   }
 `

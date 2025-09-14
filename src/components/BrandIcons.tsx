@@ -12,11 +12,16 @@ interface BrandIconsProps{
         icon: {
             imageUrl: string;
         };
+        mobileIcon: {
+            imageUrl: string;
+        };
         _key: string;
     }[];
 }
 
 export default function BrandIcons(props: BrandIconsProps) {
+    console.log("props brands", props);
+    
     const [activeIndex, setActiveIndex] = useState(0);
     const width = useWindowWidth();
     const chunkSize = width && width < 768 ? 3 : 5;
@@ -53,17 +58,28 @@ export default function BrandIcons(props: BrandIconsProps) {
             <Animate fromDown>
                 <ul className="h-[57px] max-md:h-[28.5px] w-full">
                     {iconSets.map((set, index) => (
-                        <li key={index} className={`${index === activeIndex? "activeList":""} brandIconsList absolute w-full left-0 flex gap-[1.2rem] justify-center`}>
+                        <li key={index} className={`${index === activeIndex? "activeList":""} brandIconsList absolute w-full left-0 flex gap-[1.2rem] max-md:gap-0 justify-center`}>
                             {set.map((icon, iconIndex) => (
-                                <img
-                                    style={{ transitionDelay: `${iconIndex * 100}ms` }}
-                                    key={icon._key}
-                                    src={icon.icon.imageUrl}
-                                    alt={`Brand icon ${icon._key}`}
-                                    width={203}
-                                    height={57}
-                                    className="w-[203px] h-[57px] object-fit max-md:w-[101.5px] max-md:h-[28.5px]"
-                                />
+                                <div key={icon._key}>
+                                    <img
+                                        style={{ transitionDelay: `${iconIndex * 100}ms` }}
+                                        src={icon.icon.imageUrl}
+                                        alt={`Brand icon ${icon._key}`}
+                                        width={203}
+                                        height={57}
+                                        className={`${icon.mobileIcon?"max-md:hidden":""} w-[203px] h-[57px] object-fit max-md:w-[120px] max-md:h-auto`}
+                                    />
+                                    {icon.mobileIcon &&
+                                      <img
+                                            style={{ transitionDelay: `${iconIndex * 100}ms` }}
+                                            src={icon.mobileIcon.imageUrl}
+                                            alt={`Brand icon ${icon._key}`}
+                                            width={203}
+                                            height={57}
+                                            className={`hidden ${!!icon.mobileIcon ? "max-md:block" :""} w-[203px] h-[57px] object-fit max-md:w-[120px] max-md:h-auto`}
+                                        />  
+                                    }
+                                </div>
                             ))}
                         </li>
                     ))}

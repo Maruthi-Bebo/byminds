@@ -33,6 +33,12 @@ export default defineType({
                             name: "icon",
                             type: "image",
                         }),
+                        defineField({
+                            title: "Mobile Icon",
+                            name: "mobileIcon",
+                            type: "image",
+                            description: "If mobile icon is not added, by default desktop icon will be picked."
+                        }),
                     ],
                 }
             ]
