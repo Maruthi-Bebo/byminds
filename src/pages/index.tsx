@@ -14,6 +14,7 @@ import {
   NavigationQueryResult,
 } from "@/sanity/types";
 import { GetStaticProps } from "next";
+import SEO from "@/components/SEO";
 
 type PageProps = {
   pageData: HomePageQueryResult;
@@ -24,13 +25,23 @@ type PageProps = {
 
 export default function Home(props: PageProps) {
   const { pageData, navData, footerData } = props;
-  console.log("pageData", pageData);
-
+  
   return (
-    <Layout navData={navData} footerData={footerData}>
-      <PageMetaData {...pageData?.metaData} />
-      {pageData?.content && <PageContent content={pageData.content} />}
-    </Layout>
+      <Layout navData={navData} footerData={footerData}>
+        {/* <PageMetaData {...pageData?.metaData} /> */}
+        <SEO
+          title={pageData?.metaData?.title ?? "We build brands people love | byminds"}
+          description={pageData?.metaData?.description ?? "We build brands people love. With emotional intelligence, strategic clarity, and bold creativity."}
+          canonical={pageData?.metaData?.metadataBase ?? "https://www.by-minds.com/"}
+          openGraph={{
+            url: `${pageData?.metaData?.metadataBase ?? "https://www.by-minds.com/"}`,
+            title: `${pageData?.metaData?.title ?? "We build brands people love | byminds"}`,
+            description: `${pageData?.metaData?.description ?? "We build brands people love. With emotional intelligence, strategic clarity, and bold creativity."}`,
+            images: [{ url: pageData?.metaData?.ogImage?.imageUrl ?? "/images/ogImage.jpg", alt: `${pageData?.metaData?.title ?? "We build brands people love | byminds"}` }],
+          }}
+        />
+        {pageData?.content && <PageContent content={pageData.content} />}
+      </Layout>
   );
 }
 

@@ -20,7 +20,6 @@ interface BrandIconsProps{
 }
 
 export default function BrandIcons(props: BrandIconsProps) {
-    console.log("props brands", props);
     
     const [activeIndex, setActiveIndex] = useState(0);
     const width = useWindowWidth();

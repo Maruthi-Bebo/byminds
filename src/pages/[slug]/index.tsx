@@ -26,7 +26,6 @@ type PageProps = {
 
 export default function Page(props: PageProps) {
   const { pageData, navData, footerData } = props;
-  console.log("Page data", pageData);
 
   return (
     <>
@@ -53,7 +52,6 @@ export const getStaticPaths = (async () => {
     if (page.slug) paths.push({ params: { slug: page.slug } });
   });
 
-  console.log("Paths", paths);
 
   return { paths, fallback: false };
 }) satisfies GetStaticPaths;
