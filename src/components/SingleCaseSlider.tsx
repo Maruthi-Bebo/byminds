@@ -260,8 +260,8 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
           <p className="web-p2 max-lg:mob-p2 hidden max-md:block">{props.caseItem?.aboutContent}</p>
           <div className="max-md:mt-[2rem]">
             {props.caseItem?.roles?.map((role, id)=>(
-              <p key={`role_item_${id}`} className="text-[1.4rem] font-generalSans flex gap-[2rem]">
-                <span className="text-greyText w-[21rem]">{role.roleName}</span>
+              <p key={`role_item_${id}`} className="text-[1.4rem] font-generalSans flex gap-[1rem]">
+                <span className="text-greyText">{role.roleName}</span>
                 <span className="text-foreground">{role.personName}</span>
               </p>
             ))}
