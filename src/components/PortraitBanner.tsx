@@ -27,7 +27,7 @@ export default function PortraitBanner(props: PortraitBannerProps) {
     return (
         <div 
             ref={bannerRef}
-            className={`logoBanner active showLogo portraitBanner relative pt-[28.5rem] max-md:py-[10rem] pb-[18rem] text-foreground overflow-hidden sectionUnderline ${isBottomVisible ? 'sectionUnderlineActive' : ''}`}
+            className={`logoBanner active showLogo portraitBanner relative pt-[28.5rem] max-md:pt-[20rem] max-md:pb-[10rem] pb-[18rem] text-foreground overflow-hidden sectionUnderline ${isBottomVisible ? 'sectionUnderlineActive' : ''}`}
         >
             {/* <div className="absolute h-full w-full top-0 left-0">
                 <Media {...props.media} className="w-full h-full object-cover"/>

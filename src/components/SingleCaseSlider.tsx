@@ -35,7 +35,15 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
   const [showSecond, setShowSecond] = useState(false);
   const text1Ref = useRef<HTMLDivElement | null>(null);
 
+  const images = props.caseItem?.images || [];
+
+  const isDesktop = () => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth > 767 && !("ontouchstart" in window);
+  };
+
   useEffect(() => {
+    if (!isDesktop()) return;
     const container = containerRef.current;
     const list = listRef.current;
 
@@ -144,6 +152,8 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
 
 
   useEffect(() => {
+    if (!isDesktop()) return;
+
     const container = containerRef.current;
     if (!container) return;
 
@@ -184,10 +194,8 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
     };
   }, [isDragging]);
 
-  const images = props.caseItem?.images || [];
-
-
   useEffect(() => {
+    if (!isDesktop()) return;
     const handleScroll = () => {
       if (text1Ref.current) {
         const rect = text1Ref.current.getBoundingClientRect();
@@ -208,6 +216,8 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
   }, []);
 
   useEffect(() => {
+    if (!isDesktop()) return;
+
     const container = containerRef.current;
     const cursor = cursorRef.current;
     if (!container || !cursor) return;
@@ -235,7 +245,7 @@ export default function SingleCaseSlider(props: SingleCaseSliderProps) {
     <div>
       <div
         ref={containerRef}
-        className="singleCaseSlider mb-[4rem] pt-[10rem] max-md:pt-[8rem] overflow-x-scroll scrollbar-hidden px-[5.4rem] select-none"
+        className="singleCaseSlider mb-[4rem] pt-[10rem] max-md:pt-[8rem] overflow-x-scroll scrollbar-hidden px-[5.4rem] max-md:px-[2rem] select-none"
       >
         <ul ref={listRef} className="flex gap-[1.6rem] w-max relative">
           <div className="h-full w-full absolute transparent z-[1] top-0 left-0"></div>

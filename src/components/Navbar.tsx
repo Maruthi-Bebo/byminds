@@ -54,7 +54,8 @@ const NavBar = () => {
         </div>
 
         <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
-          <img src="/images/logoNavBlack.svg" width={217} height={63} className="w-[16.6rem] h-auto max-md:w-[12rem]"/>
+          <img src="/images/logoNavBlack.svg" width={217} height={63} className="w-[16.6rem] h-auto max-md:w-[12rem] max-md:hidden"/>
+          <img src="/images/navLogoMobile.jpg" width={166} height={48} className="w-[16.6rem] h-auto max-md:w-[12rem] max-md:block hidden"/>
         </Link>
 
         {/* <div className="flex items-center gap-[2rem] max-lg:hidden">

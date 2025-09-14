@@ -8,7 +8,7 @@ export default function Map() {
         const handleScroll = () => {
             if (containerRef.current && !visible) {
                 const rect = containerRef.current.getBoundingClientRect();
-                if (rect.top <= 150) {
+                if (rect.top <= 400) {
                     setVisible(true);
                     window.removeEventListener('scroll', handleScroll);
                 }
