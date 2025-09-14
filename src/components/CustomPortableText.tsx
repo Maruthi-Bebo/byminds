@@ -43,7 +43,7 @@ export default function CustomPortableText({
       ),
       customVideo: ({ value }) => <CustomVideo {...value} />,
       media: ({ value, index }) => <Media {...value} isLCP={index === 0} />,
-      logoBanner: ({ value }) => <LogoBanner {...value} />,
+      // logoBanner: ({ value }) => <LogoBanner {...value} />,
       portraitBanner: ({ value }) => <PortraitBanner {...value} />,
       ourWorkListing: ({ value }) => <OurWorkListing {...value} />,
       brandIcons: ({ value }) => <BrandIcons {...value} />,
