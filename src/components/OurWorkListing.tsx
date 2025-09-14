@@ -49,7 +49,7 @@ export default function OurWorkListing(props: OurWorkListingProps) {
     }, []);
 
     return (
-        <div ref={sectionRef} className={`ourWorkListing pt-[18rem] pb-[18rem] max-md:py-[10rem] relative sectionUnderline ${isBottomAtCenter ? 'sectionUnderlineActive' : ''}`}>
+        <div ref={sectionRef} className={`ourWorkListing w-screen overflow-hidden pt-[18rem] pb-[18rem] max-md:py-[10rem] relative sectionUnderline ${isBottomAtCenter ? 'sectionUnderlineActive' : ''}`}>
             <div className="relative">
               <div className="max-md:p-0 px-[2rem] text-center bg-background z-[1]">
                 <Animate fromDown>

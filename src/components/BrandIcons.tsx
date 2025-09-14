@@ -40,7 +40,7 @@ export default function BrandIcons(props: BrandIconsProps) {
     }, [iconSets.length]);
 
     return (
-        <div className="brandIcons pt-[18rem] pb-[24rem] max-md:py-[10rem]">
+        <div className="brandIcons w-screen overflow-hidden pt-[18rem] pb-[24rem] max-md:py-[10rem]">
             <Animate fromDown>
                 <p className="text-center mb-[1.5rem] web-p1 max-md:mob-p2">{props.caption}</p>
             </Animate>
